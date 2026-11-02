@@ -1,4 +1,4 @@
-# The Wedding of Varsha & Jayveer
+# The Wedding of Barsa & Jayveer
 
 A single-page, scroll-through digital wedding invitation. No build step, no framework, no
 dependencies — plain HTML, CSS and ES modules, so it drops straight onto GitHub Pages.
@@ -47,7 +47,7 @@ correction on Matru Pujan (printed Thursday, corrected to **Friday** — 11 Dec 
 | --- | --- |
 | Ganesh invocation and shloka | `invocation` — salutation plus its English meaning |
 | "By the boundless grace of the Almighty, my daughter…" | `couple.preamble` |
-| Ayushmati Varsha / Chiranjeev Jayveer Singh | `couple.bride` / `couple.groom` — honorific, name, grandparent and parent lines, address |
+| Ayushmati Barsa / Chiranjeev Jayveer Singh | `couple.bride` / `couple.groom` — honorific, name, grandparent and parent lines, address |
 | "with" … "Sacred Wedding" | `couple.conjunction`, `couple.connector`, `couple.occasion` |
 | The blessing request | `couple.request` |
 | Tel Pujan · Matru Pujan · Shubh Vivah · Vidai | `functions.items` — each with an English gloss as `subtitle` |
@@ -56,7 +56,7 @@ correction on Matru Pujan (printed Thursday, corrected to **Friday** — 11 Dec 
 | The three host groups | `hosts.groups` |
 | Sender's two phone numbers | `contact.people[0].phones` |
 
-Proper nouns are transliterated (Varsha, Jayveer Singh, Sai Utsav Garden, Etawah); everything
+Proper nouns keep the spellings the family uses (Barsa, Jayveer Singh, Sai Utsav Garden, Etawah); everything
 else is in English. The Devanagari faces remain in the font stacks, so pasting Hindi back into
 any config string renders correctly without touching the CSS.
 

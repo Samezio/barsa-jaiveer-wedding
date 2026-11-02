@@ -1,19 +1,19 @@
 /**
  * THE ONLY FILE YOU NEED TO EDIT.
  * Every string, date, card and link on the invitation is read from here.
- * Content translated from the printed card (Varsha & Jayveer, 12 December 2026).
+ * Content translated from the printed card (Barsa & Jayveer, 12 December 2026).
  * Proper nouns are transliterated; everything else is rendered in English.
  */
 export const invitation = {
   meta: {
-    title: 'The Wedding of Varsha & Jayveer',
+    title: 'The Wedding of Barsa & Jayveer',
     description:
       'Saturday, 12 December 2026 — Sai Utsav Garden, Purviya Tola, Etawah. Please grace the occasion with your family.',
     favicon: '🪔',
   },
 
   cover: {
-    monogram: 'V ❀ J',
+    monogram: 'B ❀ J',
     hint: 'Tap the seal to open',
     kicker: 'The Wedding',
   },
@@ -40,10 +40,10 @@ export const invitation = {
     tagline: 'Wedding date',
     bride: {
       honorific: 'Ayushmati',
-      name: 'VARSHA',
+      name: 'BARSA',
       grandparents: 'Granddaughter of Shri Bangali Lal',
       parents: 'Daughter of Shri Santosh Kumar & Smt. Anita',
-      address: 'House No. 272, Professor Colony, opposite K.K. Degree College, Etawah',
+      address: 'Etawah',
     },
     groom: {
       honorific: 'Chiranjeev',
@@ -168,7 +168,7 @@ export const invitation = {
       {
         side: "Bride's family",
         name: 'Santosh Kumar',
-        detail: 'House No. 272, Professor Colony, Degree College, Etawah',
+        detail: 'Etawah, Uttar Pradesh',
         phones: ['919927395516', '918299271619'],
       },
     ],
