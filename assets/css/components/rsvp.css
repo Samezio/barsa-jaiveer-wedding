@@ -1,0 +1,86 @@
+.rsvp__blurb {
+  max-width: 40ch;
+  margin-inline: auto;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.rsvp__form {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 28rem;
+  margin: clamp(1.5rem, 4vw, 2.5rem) auto 0;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  text-align: left;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.field { display: grid; gap: 0.35rem; border: 0; padding: 0; margin: 0; }
+
+.field__label {
+  font-family: var(--font-heading);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--olive-deep);
+  padding: 0;
+}
+
+.field__control {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55em 0.8em;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.field__control:focus {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold-pale) 55%, transparent);
+  outline: none;
+}
+
+textarea.field__control { min-height: 5rem; resize: vertical; }
+
+.choice { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.choice__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.5em 1.1em;
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-display);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+.choice__option:has(input:checked) {
+  background: color-mix(in srgb, var(--gold-pale) 55%, transparent);
+  border-color: var(--border-strong);
+}
+
+.choice__option input { accent-color: var(--maroon); }
+
+.rsvp__form .button { justify-self: stretch; margin-top: 0.35rem; }
+
+.rsvp__status {
+  min-height: 1.4em;
+  font-size: var(--step--1);
+  font-style: italic;
+  text-align: center;
+}
+
+.rsvp__status[data-tone='success'] { color: var(--olive); font-style: normal; }
+.rsvp__status[data-tone='error'] { color: var(--maroon); }

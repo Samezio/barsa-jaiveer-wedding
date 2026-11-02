@@ -1,0 +1,118 @@
+.functions { position: relative; isolation: isolate; }
+
+/* Full-bleed warm band behind the ceremony cards. */
+.functions::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--paper-warm) 85%, transparent) 18% 82%, transparent);
+  z-index: -1;
+}
+
+.functions__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-door), box-shadow 0.4s;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.card[data-reveal] { transition-delay: calc(var(--i, 0) * 90ms); }
+.card[data-index='1'] { --i: 1; }
+.card[data-index='2'] { --i: 2; }
+.card[data-index='3'] { --i: 3; }
+.card[data-index='4'] { --i: 4; }
+.card[data-index='5'] { --i: 5; }
+
+.card__media {
+  aspect-ratio: 4 / 3;
+  background: var(--paper-warm);
+  border-bottom: 1px solid var(--border);
+}
+
+.card__image { width: 100%; height: 100%; object-fit: cover; }
+
+.card__image--placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--gold-pale) 60%, transparent), transparent 70%),
+    linear-gradient(135deg, var(--paper-warm), var(--paper-deep));
+}
+
+.card__crest { width: 46%; max-width: 120px; stroke: var(--gold-deep); opacity: 0.75; }
+
+.card__body {
+  display: grid;
+  gap: 0.4rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.card__title {
+  font-size: var(--step-1);
+  letter-spacing: var(--tracking-display);
+}
+
+.card__subtitle {
+  margin-top: -0.15rem;
+  font-size: var(--step--1);
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+.card__when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+}
+
+.card__date {
+  font-family: var(--font-heading);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--maroon);
+}
+
+.card__day,
+.card__time { font-style: italic; color: var(--ink-soft); }
+
+.card__venue { color: var(--ink-soft); }
+
+.card__dress {
+  display: grid;
+  gap: 0.1rem;
+  margin-top: 0.45rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--border);
+}
+
+.card__dress-label {
+  font-family: var(--font-script-alt);
+  font-size: var(--step-0);
+  color: var(--gold-deep);
+  line-height: 1.6;
+}
+
+.card__dress-value {
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--olive);
+}

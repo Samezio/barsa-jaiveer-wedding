@@ -1,0 +1,12 @@
+# Private RSVP endpoint / tokens — never commit
+assets/js/config/rsvp.config.js
+
+# Source scans of the printed card (move into assets/img/ if you want them shown)
+tmp/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

@@ -1,0 +1,29 @@
+.footer {
+  padding: clamp(3rem, 8vw, 5rem) var(--gutter) clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--olive) 12%, transparent));
+}
+
+.footer__ornament {
+  width: min(180px, 50%);
+  height: 40px;
+  margin-inline: auto;
+  opacity: 0.7;
+}
+
+.footer__note {
+  margin-top: 1rem;
+  font-family: var(--font-script);
+  font-size: var(--step-2);
+  color: var(--olive-deep);
+  line-height: 1.5;
+}
+
+.footer__credit {
+  margin-top: 1.5rem;
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-display);
+  color: var(--ink-muted);
+}
+
+.footer__heart { color: var(--maroon); }

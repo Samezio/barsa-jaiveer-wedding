@@ -1,0 +1,102 @@
+.announcement { padding-top: clamp(1.5rem, 5vh, 3rem); }
+
+.announcement__intro {
+  font-family: var(--font-script-alt);
+  font-size: var(--step-1);
+  color: var(--maroon);
+  line-height: 2;
+}
+
+.announcement__preamble {
+  max-width: 44ch;
+  margin: 0.25rem auto 0;
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+}
+
+.announcement__names {
+  display: grid;
+  gap: clamp(0.75rem, 2.5vw, 1.5rem);
+  justify-items: center;
+  margin-block: clamp(1.25rem, 3vw, 2rem);
+}
+
+.announcement__honorific {
+  font-family: var(--font-heading);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-label);
+  color: var(--gold-deep);
+}
+
+.announcement__name {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  color: var(--olive-deep);
+  line-height: 1.15;
+}
+
+.announcement__lineage,
+.announcement__address {
+  max-width: 42ch;
+  margin-inline: auto;
+  font-size: var(--step--1);
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.announcement__lineage:first-of-type { margin-top: 0.3rem; }
+.announcement__address { color: var(--ink-muted); }
+
+.announcement__amp {
+  font-family: var(--font-script);
+  font-size: var(--step-2);
+  color: var(--gold-deep);
+  line-height: 1;
+  padding: 0.15em 0.9em;
+  border-block: 1px solid var(--border);
+}
+
+.announcement__connector {
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+}
+
+.announcement__occasion {
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  letter-spacing: var(--tracking-display);
+  color: var(--maroon);
+}
+
+.announcement__request {
+  max-width: 48ch;
+  margin: 0 auto clamp(1.5rem, 4vw, 2.25rem);
+  font-size: var(--step-0);
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.announcement__tagline {
+  font-family: var(--font-heading);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-kicker);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.announcement__date {
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  letter-spacing: var(--tracking-display);
+  color: var(--maroon);
+}
+
+.announcement__city {
+  font-size: var(--step-0);
+  font-style: italic;
+  color: var(--ink-muted);
+}

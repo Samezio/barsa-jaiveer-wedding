@@ -1,0 +1,163 @@
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  grid-template-areas: 'stack';
+  padding: var(--gutter);
+  overflow: hidden;
+}
+
+.cover > * { grid-area: stack; }
+
+.cover__doors {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+}
+
+.cover__door {
+  position: relative;
+  flex: 1 1 50%;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--olive) 92%, #000) 0%, var(--olive-deep) 100%);
+  box-shadow: inset 0 0 120px rgb(0 0 0 / 0.45);
+  transition: transform 1.6s var(--ease-door);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.cover__door::before {
+  /* gold inner frame */
+  content: '';
+  position: absolute;
+  inset: clamp(14px, 3vw, 32px);
+  border: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
+  box-shadow: inset 0 0 0 4px color-mix(in srgb, var(--gold) 16%, transparent);
+}
+
+.cover__door::after {
+  /* soft sheen along the meeting edge */
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, rgb(0 0 0 / 0.35));
+}
+
+.cover__door--left { transform-origin: left center; border-right: 1px solid color-mix(in srgb, var(--gold) 55%, transparent); }
+.cover__door--right { transform-origin: right center; }
+.cover__door--left::after { right: 0; }
+.cover__door--right::after { left: 0; transform: scaleX(-1); }
+
+.cover__door-inlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.cover__door-ornament {
+  width: clamp(90px, 22vw, 170px);
+  stroke: color-mix(in srgb, var(--gold) 60%, transparent);
+  opacity: 0.6;
+}
+
+.cover__door--left .cover__door-ornament { transform: translateX(22%); }
+.cover__door--right .cover__door-ornament { transform: translateX(-22%) scaleX(-1); }
+
+/* Seal */
+.cover__seal {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(104px, 26vw, 148px);
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold-deep) 70%);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--gold-pale) 70%, transparent),
+    0 18px 40px -12px rgb(0 0 0 / 0.6);
+  cursor: pointer;
+  animation: seal-pulse 2.8s ease-in-out infinite;
+  transition: transform 0.6s var(--ease-door), opacity 0.6s;
+}
+
+.cover__seal:hover { animation-play-state: paused; transform: scale(1.04); }
+
+.cover__seal-ring {
+  display: grid;
+  place-items: center;
+  width: 74%;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, #3a2a06 45%, transparent);
+  border-radius: 50%;
+}
+
+.cover__seal-monogram {
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  line-height: 1;
+  color: #3f2d06;
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--gold-pale) 80%, transparent);
+}
+
+.cover__ribbon {
+  position: absolute;
+  top: 55%;
+  width: clamp(80px, 20vw, 150px);
+  height: 16px;
+  background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+  box-shadow: 0 6px 14px -8px rgb(0 0 0 / 0.7);
+  z-index: -1;
+}
+
+.cover__ribbon--left { right: 55%; transform-origin: right center; transform: rotate(-8deg); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%); }
+.cover__ribbon--right { left: 55%; transform-origin: left center; transform: rotate(8deg); clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%); }
+
+.cover__caption {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  padding-bottom: clamp(1.5rem, 6vh, 4rem);
+  text-align: center;
+  transition: opacity 0.5s;
+}
+
+.cover__kicker {
+  font-family: var(--font-script-alt);
+  font-size: var(--step-1);
+  color: var(--gold-pale);
+  line-height: 1.9;
+}
+
+.cover__hint {
+  font-family: var(--font-heading);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-kicker);
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--gold-pale) 85%, transparent);
+}
+
+/* Opened state */
+.cover[data-open='true'] .cover__door--left { transform: rotateY(-108deg); }
+.cover[data-open='true'] .cover__door--right { transform: rotateY(108deg); }
+.cover[data-open='true'] .cover__seal { transform: scale(0.4); opacity: 0; }
+.cover[data-open='true'] .cover__caption { opacity: 0; }
+.cover[hidden] { display: none; }
+
+@keyframes seal-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold-pale) 70%, transparent), 0 18px 40px -12px rgb(0 0 0 / 0.6), 0 0 0 0 color-mix(in srgb, var(--gold-bright) 45%, transparent); }
+  70% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold-pale) 70%, transparent), 0 18px 40px -12px rgb(0 0 0 / 0.6), 0 0 0 26px transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover__door { transition: opacity 0.4s; }
+  .cover[data-open='true'] .cover__door { transform: none; opacity: 0; }
+  .cover__seal { animation: none; }
+}
