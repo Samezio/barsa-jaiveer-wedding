@@ -1,12 +1,12 @@
 /**
  * THE ONLY FILE YOU NEED TO EDIT.
  * Every string, date, card and link on the invitation is read from here.
- * Content translated from the printed card (Barsa & Jayveer, 12 December 2026).
+ * Content translated from the printed card (Barsa & Jaiveer, 12 December 2026).
  * Proper nouns are transliterated; everything else is rendered in English.
  */
 export const invitation = {
   meta: {
-    title: 'The Wedding of Barsa & Jayveer',
+    title: 'The Wedding of Barsa & Jaiveer',
     description:
       'Saturday, 12 December 2026 — Sai Utsav Garden, Purviya Tola, Etawah. Please grace the occasion with your family.',
     favicon: '🪔',
@@ -47,7 +47,7 @@ export const invitation = {
     },
     groom: {
       honorific: 'Chiranjeev',
-      name: 'JAYVEER SINGH',
+      name: 'JAIVEER SINGH',
       grandparents: 'Grandson of Shri Bholu Shankar',
       parents: 'Son of Shri Rameshwar Singh',
       address: 'District Hathras',
