@@ -40,6 +40,8 @@ npx --yes serve .
 
 The weekday on each ceremony card is taken verbatim from the card, including the hand-written
 correction on Matru Pujan (printed Thursday, corrected to **Friday** — 11 Dec 2026 is a Friday).
+Weekdays for the two later additions were derived from their dates: Lagun falls on a Thursday,
+Haldi / Mehndi on a Friday.
 
 ## How the card maps onto the page
 
@@ -51,6 +53,7 @@ correction on Matru Pujan (printed Thursday, corrected to **Friday** — 11 Dec 
 | "with" … "Sacred Wedding" | `couple.conjunction`, `couple.connector`, `couple.occasion` |
 | The blessing request | `couple.request` |
 | Tel Pujan · Matru Pujan · Shubh Vivah · Vidai | `functions.items` — each with an English gloss as `subtitle` |
+| *(not on the card)* Lagun · Haldi / Mehndi | Added from the family afterwards — both at Shree Krishna Vatika, Sahpau |
 | Gauri shloka on the programme card | `functions.verse` |
 | Sai Utsav Garden, Purviya Tola | `venue` + Google Maps button |
 | The three host groups | `hosts.groups` |
